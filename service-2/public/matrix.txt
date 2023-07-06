@@ -1,0 +1,8 @@
+New SendForApproval
+SendForApproval Rejected
+SendForApproval Returned
+SendForApproval ApprovalProcess
+Returned SendForApproval
+ApprovalProcess Rejected
+ApprovalProcess Approved
+Approved Rejected

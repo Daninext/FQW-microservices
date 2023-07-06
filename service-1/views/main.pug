@@ -1,0 +1,41 @@
+doctype html
+html(lang="ru")
+    - const name = "Анкеты ВКР";
+    include head
+    script(src="../../scripts/formUpDownLoader.js")
+    body()
+        include authform
+        header()
+        main()
+            .l-content
+                .new-form
+                    form(style="display: flex; flex-direction: column;")
+                        label Отправить/изменить анкету
+                        label#id-label ID:
+                        label(for='full-name-input') ФИО
+                        input#full-name-input(type='text', name='fullName')
+                        label(for='group-input') Группа
+                        input#group-input(type='text', name='group')
+                        label(for='theme-input') Тема
+                        input#theme-input(type='text', name='theme')
+                        label(for='company-name-input') Компания
+                        input#company-name-input(type='text', name='companyName')
+                        label(for='consultant-input') Консультант
+                        input#consultant-input(type='checkbox')
+                        button(type='button', onclick='upload()') Upload
+                        button(type='button', onclick='cancel()') Cancel
+                .form-list
+                    table(style="grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr)")
+                        thead
+                            tr
+                                th ФИО студента
+                                th Группа
+                                th Тема
+                                th Статус
+                                th
+                                th Комментарий
+                        tbody#table-body
+                    .page-buttons(style='display: flex; justify-content: space-around;')
+                        button(type='button', onclick='getNewPage(-1)') Предыдущая страница
+                        p#cur-page 1
+                        button(type='button', onclick='getNewPage(1)') Следующая страница

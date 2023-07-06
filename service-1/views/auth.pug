@@ -1,0 +1,32 @@
+doctype html
+html(lang="ru")
+    - const name = "Авторизация";
+    include head
+    body()
+        main()
+            .l-auth(style='')
+                .sing-up
+                    form#sign-up-form
+                        .form-title Registration
+                        .form-subtitle Create new account
+                        div
+                            label(for='sing-up-username-input') Username
+                            input#sing-up-username-input(type='text' name='username' placeholder=' ')
+                        div
+                            label(for='sign-up-email-input') Email
+                            input#sign-up-email-input(type='text' name='email' placeholder=' ')
+                        div
+                            label(for='sign-up-password-input') Password
+                            input#sign-up-password-input(type='password' name='password' placeholder=' ' minlength='8' maxlength='20')
+                        button(type='button' onclick='signUpClicked()') Sign up
+                .sing-in
+                    form#sign-in-form
+                        .form-title Authorisation
+                        .form-subtitle Long time
+                        div
+                            label(for='sign-in-email-input') Email
+                            input#sign-in-email-input(type='text' name='email' placeholder=' ')
+                        div
+                            label(for='sign-in-password-input') Password
+                            input#sign-in-password-input(type='password' name='password' placeholder=' ')
+                        button(type='button' onclick='signInClicked()') Sign in

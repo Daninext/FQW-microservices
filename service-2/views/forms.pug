@@ -1,0 +1,44 @@
+doctype html
+html(lang='ru')
+    - const name = "Анкеты ВКР";
+    include head
+    script(src="../../scripts/formLoader.js")
+    body()
+        header(style='display: flex; justify-content: space-around;')
+            a(href='/forms') Анкеты ВКР
+            a(href='/groups') Группы
+        main()
+            fieldset
+                div
+                    input#search-input(type='text')
+                    input#date-input(type='date')
+                    button(type='button' onclick='searchForms()') Поиск
+                    button(type='button' onclick='clearFilters()') Сбросить
+                div
+                    input#status-radio(type='radio' name='param' value='status' checked)
+                    label(for='status-radio') По статусу
+                div
+                    input#theme-radio(type='radio' name='param' value='theme')
+                    label(for='theme-radio') По теме
+                div
+                    input#group-radio(type='radio' name='param' value='group')
+                    label(for='group-radio') По группе
+                div
+                    input#full-name-radio(type='radio' name='param' value='full-name')
+                    label(for='full-name-radio') По ФИО
+                div
+                    input#date-radio(type='radio' name='param' value='date')
+                    label(for='date-radio') По дате
+            table(style="grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(100px, 1fr)")
+                thead
+                    tr
+                        th ФИО студента
+                        th Группа
+                        th Тема
+                        th Статус
+                        th
+                tbody#table-body
+            .page-buttons(style='display: flex; justify-content: space-around;')
+                button(type='button', onclick='getNewPage(-1)') Предыдущая страница
+                p#cur-page 1
+                button(type='button', onclick='getNewPage(1)') Следующая страница

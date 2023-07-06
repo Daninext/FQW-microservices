@@ -1,0 +1,18 @@
+.l-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+table {
+    display: grid;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+thead,
+tbody,
+tr {
+    display: contents;
+    place-content: center;
+}

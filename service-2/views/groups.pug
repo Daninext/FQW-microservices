@@ -1,0 +1,25 @@
+doctype html
+html(lang='ru')
+    - const name = "Группы";
+    include head
+    script(src="../../scripts/groupLoader.js")
+    body()
+        header(style='display: flex; justify-content: space-around;')
+            a(href='/forms') Анкеты ВКР
+            a(href='/groups') Группы
+        main()
+            fieldset
+                div
+                    label(for='search-input') Поиск по имени группы
+                    input#search-input(type='text')
+                    button(type='button' onclick='searchGroups()') Поиск
+                    button(type='button' onclick='clearFilters()') Сбросить
+            table
+                thead
+                    tr
+                        th Группа
+                tbody#table-body
+            .page-buttons(style='display: flex; justify-content: space-around;')
+                button(type='button', onclick='getNewPage(-1)') Предыдущая страница
+                p#cur-page 1
+                button(type='button', onclick='getNewPage(1)') Следующая страница

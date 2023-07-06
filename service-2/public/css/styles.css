@@ -1,0 +1,17 @@
+table {
+    display: grid;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+thead,
+tbody,
+tr {
+    display: contents;
+    place-content: center;
+}
+
+fieldset {
+    display: flex;
+    justify-content: center
+}
